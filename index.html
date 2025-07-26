@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glay Velos - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="src/output.css">
+    
+    <!-- Custom Hero Styles -->
+    <style>
+        @keyframes animate-fade-in {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: animate-fade-in 1.5s ease-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.05) 0%, transparent 50%, rgba(236, 72, 153, 0.05) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full bg-rose-50/20 backdrop-blur-md border-b border-rose-100/20 z-40 shadow-lg transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+            <div class="font-bold text-xl text-rose-800">Glay Velos</div>
+            <ul class="hidden md:flex gap-8 font-medium" id="nav-links">
+                <li><a href="#home" class="hover:text-rose-600 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-rose-600 transition">About</a></li>
+                <li class="relative">
+                    <button type="button" class="services-dropdown-toggle flex items-center hover:text-rose-600 transition focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        Services & Portfolio <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="services-dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded shadow-lg hidden z-50">
+                        <a href="pages/digital-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Digital Marketing</a>
+                        <a href="pages/video-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Video Editing</a>
+                        <a href="pages/photo-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Photo Editing</a>
+                        <a href="pages/web-development.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Web Development</a>
+                    </div>
+                </li>
+                <li><a href="#contact" class="hover:text-rose-600 transition">Contact</a></li>
+            </ul>
+            <div class="md:hidden flex flex-col gap-1 cursor-pointer" id="hamburger">
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+            </div>
+        </div>
+        <ul class="md:hidden hidden flex-col gap-4 px-6 pb-4 shadow-lg" id="mobile-menu">
+            <li><a href="#home" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">Home</a></li>
+            <li><a href="#about" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">About</a></li>
+            <li class="relative">
+                <button type="button" class="services-dropdown-toggle flex items-center w-full text-left py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm focus:outline-none" aria-expanded="false">
+                    Services & Portfolio <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="services-dropdown-menu hidden bg-white rounded-lg shadow-lg mt-2 z-50">
+                    <a href="pages/digital-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50 rounded-t-lg">Digital Marketing</a>
+                    <a href="pages/video-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Video Editing</a>
+                    <a href="pages/photo-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Photo Editing</a>
+                    <a href="pages/web-development.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50 rounded-b-lg">Web Development</a>
+                </div>
+            </li>
+            <li><a href="#contact" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex flex-col items-center justify-center min-h-screen pt-20 pb-16 bg-gradient-to-br from-rose-50 via-white to-pink-50 text-rose-600 text-center relative overflow-hidden">
+        <!-- Elegant Background Elements -->
+        <div class="absolute inset-0 opacity-30">
+            <!-- Floating geometric shapes -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-rose-200 to-pink-200 rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-16 w-32 h-32 bg-gradient-to-br from-pink-200 to-rose-200 rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div class="absolute bottom-32 left-20 w-24 h-24 bg-gradient-to-br from-rose-300 to-pink-300 rounded-full blur-xl animate-pulse delay-2000"></div>
+            <div class="absolute bottom-40 right-10 w-16 h-16 bg-gradient-to-br from-pink-300 to-rose-300 rounded-full blur-lg animate-pulse delay-500"></div>
+            <!-- Subtle grid pattern -->
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-rose-100/20 to-transparent"></div>
+        </div>
+        
+        <!-- Main Hero Content -->
+        <div class="max-w-4xl mx-auto relative z-10 px-4">
+            <!-- Profile Image with Enhanced Styling -->
+            <div class="flex justify-center mb-8">
+                <div class="relative group">
+                    <!-- Outer glow ring -->
+                    <div class="absolute -inset-4 bg-gradient-to-r from-rose-300 via-pink-300 to-rose-300 rounded-full blur-md opacity-75 group-hover:opacity-100 animate-pulse transition-all duration-300"></div>
+                    <!-- Main profile image -->
+                    <img src="images/profile.jpg" alt="Glay Velos" class="relative w-48 h-48 rounded-full object-cover border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-rose-600 drop-shadow-lg animate-fade-in leading-tight">Hi, I'm Glay Velos!</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-700 drop-shadow-sm">Creative freelancer specializing in <span class="text-rose-600 font-semibold">digital marketing</span>, visual storytelling through <span class="text-rose-600 font-semibold">video</span>, <span class="text-rose-600 font-semibold">photo editing</span>, and modern <span class="text-rose-600 font-semibold">web solutions</span>. Ready to bring your vision to life!</p>
+            
+            <!-- Enhanced CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="#about" class="group px-8 py-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-full font-semibold hover:from-rose-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-user mr-2 group-hover:animate-pulse"></i>Learn More
+                </a>
+                <a href="#contact" class="group px-8 py-4 bg-white text-rose-600 border-2 border-rose-300 rounded-full font-semibold hover:bg-rose-50 hover:border-rose-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-envelope mr-2 group-hover:animate-pulse"></i>Get In Touch
+                </a>
+            </div>
+            
+            <!-- Key Skills Highlight -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-rose-200 hover:border-rose-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-bullhorn text-3xl text-rose-500 mb-3 group-hover:text-rose-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Digital Marketing</h3>
+                </div>
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-rose-200 hover:border-rose-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-video text-3xl text-pink-500 mb-3 group-hover:text-pink-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Video Editing</h3>
+                </div>
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-rose-200 hover:border-rose-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-camera text-3xl text-rose-500 mb-3 group-hover:text-rose-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Photo Editing</h3>
+                </div>
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-rose-200 hover:border-rose-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-code text-3xl text-pink-500 mb-3 group-hover:text-pink-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Web Development</h3>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-rose-800 mb-10 fade-in">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-10 items-center">
+                <div class="flex justify-center md:col-span-1 fade-in-left">
+                    <img src="images/profile.jpg" alt="Glay Velos" class="w-52 h-52 rounded-full object-cover border-4 border-rose-100 shadow">
+                </div>
+                <div class="md:col-span-2 space-y-4 fade-in-right">
+                    <p>I'm Glay Velos, a passionate digital creative from the Philippines who transforms ideas into compelling visual experiences.</p>
+                    <p>My journey has taken me through the dynamic worlds of digital marketing, content creation, digital design, and web development. From developing strategic marketing campaigns to crafting engaging video narratives, perfecting portrait photography, and building responsive websites, I thrive on bringing stories to life through technology.</p>
+                    <p>My toolkit includes industry-standard software like DaVinci Resolve, Adobe Premiere Pro, Lightroom, Capture One, alongside modern web technologies like HTML5, CSS3, JavaScript, and digital marketing platforms.</p>
+                    <p>Every project is an opportunity to exceed expectations through meticulous attention to detail and innovative problem-solving.</p>
+                    <p class="font-semibold">Ready to collaborate and create something extraordinary together.</p>
+                    <div class="bg-rose-50 border-l-4 border-rose-400 rounded p-4 mt-4">
+                        <p><strong>Email:</strong> glayvelos20@gmail.com</p>
+                        <p><strong>Location:</strong> Philippines (Remote-friendly)</p>
+                        <p><strong>Availability:</strong> Flexible. I am comfortable working night shifts in my time zone and can align with your daytime hours as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-rose-800 mb-10 fade-in">My Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <a href="pages/digital-marketing.html" class="bg-white rounded-lg shadow p-6 text-center group hover:bg-rose-50 transition cursor-pointer block fade-in">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleads.svg" alt="Digital Marketing" class="mx-auto mb-2 w-12 h-12">
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-rose-700 transition">Digital Marketing</h3>
+                    <p>Strategic social media campaigns, content marketing, and brand growth solutions that drive engagement and convert audiences into customers.</p>
+                </a>
+                <a href="pages/video-editing.html" class="bg-white rounded-lg shadow p-6 text-center group hover:bg-rose-50 transition cursor-pointer block fade-in">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro" class="mx-auto mb-2 w-12 h-12">
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-rose-700 transition">Video Editing</h3>
+                    <p>Transforming raw footage into captivating stories for brands, creators, and businesses. Specializing in social media content, promotional videos, and documentary-style projects.</p>
+                </a>
+                <a href="pages/photo-editing.html" class="bg-white rounded-lg shadow p-6 text-center group hover:bg-rose-50 transition cursor-pointer block fade-in">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="mx-auto mb-2 w-12 h-12">
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-rose-700 transition">Photo Editing</h3>
+                    <p>Professional image enhancement and creative retouching services. From lifestyle photography to product shoots, delivering stunning visuals that make an impact.</p>
+                </a>
+                <a href="pages/web-development.html" class="bg-white rounded-lg shadow p-6 text-center group hover:bg-rose-50 transition cursor-pointer block fade-in">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="mx-auto mb-2 w-12 h-12">
+                    <h3 class="font-bold text-xl mb-2 group-hover:text-rose-700 transition">Web Development</h3>
+                    <p>Building fast, responsive, and user-friendly websites that drive results. From personal portfolios to business platforms using cutting-edge web technologies.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-rose-800 mb-10 fade-in">What Clients Say</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-rose-50 rounded-lg shadow p-6 fade-in">
+                        <p class="italic mb-4">"Professional work delivered on time with excellent communication throughout the project."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="images/johnr.jpg" alt="Client photo" class="w-10 h-10 rounded-full object-cover bg-rose-200" />
+                            <div>
+                                <h4 class="font-semibold">John R.</h4>
+                                <span class="text-sm text-gray-600">Digital Marketing Assistant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-rose-50 rounded-lg shadow p-6 fade-in fade-in-delay-1">
+                        <p class="italic mb-4">"Creative solutions that exceeded my expectations. Highly recommend for any editing needs!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="images/Rosey.jpg" alt="Client photo" class="w-10 h-10 rounded-full object-cover bg-rose-200" />
+                            <div>
+                                <h4 class="font-semibold">Rose R.</h4>
+                                <span class="text-sm text-gray-600">Digital Marketing Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-rose-50 rounded-lg shadow p-6 fade-in fade-in-delay-2">
+                        <p class="italic mb-4">"Been a partner with Glay for years now. Very easy to work with!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="images/ajr.jpg" alt="Client photo" class="w-10 h-10 rounded-full object-cover bg-rose-200" />
+                            <div>
+                                <h4 class="font-semibold">AJ R.</h4>
+                                <span class="text-sm text-gray-600">Photographer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-rose-100 via-pink-50 to-rose-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10 fade-in text-rose-800">Get In Touch</h2>
+            <div class="flex justify-center">
+                <div class="max-w-lg w-full text-center fade-in fade-in-delay-1">
+                    <h3 class="font-bold text-xl mb-2 text-rose-700">Let's Create Something Amazing!</h3>
+                    <p class="mb-4 text-gray-700">Ready to elevate your brand with digital marketing strategies, stunning visuals, or a powerful web presence? I'd love to discuss how we can bring your vision to life and achieve your goals together.</p>
+                    <div class="flex flex-col gap-4 items-center justify-center mt-6">
+                        <a href="mailto:glayvelos20@gmail.com" class="inline-flex items-center justify-center px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white border border-rose-500 hover:border-rose-600 rounded-xl text-lg font-semibold transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl" style="text-decoration: none;">
+                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-rose-50 to-pink-50 border-t border-rose-200 text-rose-700 text-center py-8">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col items-center space-y-4">
+                <p class="text-sm text-gray-600">&copy; GlayVelos 2025 All rights reserved.</p>
+                <p class="text-xs text-gray-500">Creative freelancer specializing in digital marketing, video editing, photo editing, and web development.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing - Glay Velos</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../src/output.css">
+    
+    <!-- Custom Hero Styles -->
+    <style>
+        @keyframes animate-fade-in {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: animate-fade-in 1.5s ease-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, transparent 50%, rgba(14, 165, 233, 0.05) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full bg-rose-50/20 backdrop-blur-md border-b border-rose-100/20 z-40 shadow-lg transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+            <a href="../index.html" class="font-bold text-xl text-rose-800">Glay Velos</a>
+            <ul class="hidden md:flex gap-8 font-medium" id="nav-links">
+                <li><a href="../index.html" class="hover:text-rose-600 transition">Home</a></li>
+                <li><a href="../index.html#about" class="hover:text-rose-600 transition">About</a></li>
+                <li class="relative">
+                    <button type="button" class="services-dropdown-toggle flex items-center hover:text-rose-600 transition focus:outline-none" aria-haspopup="true" aria-expanded="false">
+                        Services & Portfolio <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="services-dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded shadow-lg hidden z-50">
+                        <a href="digital-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Digital Marketing</a>
+                        <a href="video-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Video Editing</a>
+                        <a href="photo-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Photo Editing</a>
+                        <a href="web-development.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Web Development</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact" class="hover:text-rose-600 transition">Contact</a></li>
+            </ul>
+            <div class="md:hidden flex flex-col gap-1 cursor-pointer" id="hamburger">
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+                <span class="block w-7 h-1 bg-rose-800 rounded"></span>
+            </div>
+        </div>
+        <ul class="md:hidden hidden flex-col gap-4 px-6 pb-4 shadow-lg" id="mobile-menu">
+            <li><a href="../index.html" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">Home</a></li>
+            <li><a href="../index.html#about" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">About</a></li>
+            <li class="relative">
+                <button type="button" class="services-dropdown-toggle flex items-center w-full text-left py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm focus:outline-none" aria-expanded="false">
+                    Services & Portfolio <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="services-dropdown-menu hidden bg-white rounded-lg shadow-lg mt-2 z-50">
+                    <a href="digital-marketing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50 rounded-t-lg">Digital Marketing</a>
+                    <a href="video-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Video Editing</a>
+                    <a href="photo-editing.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50">Photo Editing</a>
+                    <a href="web-development.html" class="block px-4 py-2 text-gray-800 hover:bg-rose-50 rounded-b-lg">Web Development</a>
+                </div>
+            </li>
+            <li><a href="../index.html#contact" class="block py-3 px-4 bg-white rounded-lg text-gray-800 hover:bg-rose-50 transition shadow-sm">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex flex-col items-center justify-center min-h-screen pt-20 pb-16 bg-gradient-to-br from-pink-50 via-white to-sky-50 text-pink-600 text-center relative overflow-hidden">
+        <!-- Elegant Background Elements -->
+        <div class="absolute inset-0 opacity-30">
+            <!-- Floating geometric shapes -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-pink-200 to-sky-200 rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-16 w-32 h-32 bg-gradient-to-br from-sky-200 to-pink-200 rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div class="absolute bottom-32 left-20 w-24 h-24 bg-gradient-to-br from-pink-300 to-sky-300 rounded-full blur-xl animate-pulse delay-2000"></div>
+            <div class="absolute bottom-40 right-10 w-16 h-16 bg-gradient-to-br from-sky-300 to-pink-300 rounded-full blur-lg animate-pulse delay-500"></div>
+            <!-- Subtle grid pattern -->
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-sky-100/20 to-transparent"></div>
+        </div>
+        
+        <!-- Main Hero Content -->
+        <div class="max-w-4xl mx-auto relative z-10 px-4">
+            <!-- Large Marketing Icon with Enhanced Styling -->
+            <div class="flex justify-center mb-8">
+                <div class="relative group">
+                    <!-- Outer glow ring -->
+                    <div class="absolute -inset-4 bg-gradient-to-r from-pink-300 via-sky-300 to-pink-300 rounded-full blur-md opacity-75 group-hover:opacity-100 animate-pulse transition-all duration-300"></div>
+                    <!-- Main icon container -->
+                    <div class="relative w-32 h-32 bg-gradient-to-br from-pink-500 to-sky-500 rounded-full shadow-2xl group-hover:scale-105 transition-transform duration-300 flex items-center justify-center border-4 border-white">
+                        <i class="fas fa-bullhorn text-4xl text-white drop-shadow-lg"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-pink-600 drop-shadow-lg leading-tight">Digital Marketing Excellence</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-gray-700 drop-shadow-sm">
+                Strategic marketing campaigns that <span class="text-pink-600 font-semibold">amplify your brand's voice</span>, engage your audience, and <span class="text-sky-600 font-semibold">drive measurable results</span> across all digital platforms.
+            </p>
+            
+            <!-- Enhanced CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="#portfolio" class="group px-8 py-4 bg-gradient-to-r from-pink-500 to-sky-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-sky-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-chart-line mr-2 group-hover:animate-pulse"></i>View Results
+                </a>
+                <a href="../index.html#contact" class="group px-8 py-4 bg-white text-pink-600 border-2 border-pink-300 rounded-full font-semibold hover:bg-pink-50 hover:border-pink-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-rocket mr-2 group-hover:animate-pulse"></i>Start Campaign
+                </a>
+            </div>
+            
+            <!-- Key Skills Highlight -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-share-alt text-3xl text-pink-500 mb-3 group-hover:text-pink-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Social Media</h3>
+                </div>
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-chart-bar text-3xl text-sky-500 mb-3 group-hover:text-sky-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Analytics</h3>
+                </div>
+                <div class="group bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <i class="fas fa-users text-3xl text-pink-500 mb-3 group-hover:text-pink-600 transition-colors"></i>
+                    <h3 class="text-sm font-semibold text-gray-700">Audience Growth</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-blue-400 to-pink-400 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-pink-400 to-sky-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-sky-400 to-blue-400 rounded-full blur-2xl animate-pulse delay-500"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <!-- Enhanced Section Header -->
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-pink-600 drop-shadow-lg leading-tight">
+                    Digital Marketing Services
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed drop-shadow-sm mb-12">
+                    Comprehensive digital solutions to elevate your brand and drive measurable growth
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                <!-- Social Media Management -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-share-alt text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Social Media Management</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-star mr-1 text-white"></i>3+ Years Experience
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Strategic content planning, posting schedules, and community engagement across Instagram, Facebook, and TikTok. Digital Marketing VA with hands-on experience creating content since 2020.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Background:</strong> Freelance photographer & cosplayer
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Strategy -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-chart-bar text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Content Strategy</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-chart-line mr-1 text-white"></i>2-5 Years Experience
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Market research and basic SEO implementation to create content that drives engagement and improves online visibility.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Tools:</strong> SEO research tools, Analytics platforms
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Development -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-palette text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Brand Development</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-crown mr-1 text-white"></i>Professional Service
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Complete brand identity creation including business briefs, logo design, color schemes, and fonts aligned with your vision, mission, and goals.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Deliverables:</strong> Brand guidelines, Logo, Color palette
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign & Ads -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-bullseye text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Campaign & Ads</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-certificate mr-1 text-white"></i>Certified Training
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Facebook Ads management and basic SEO implementation. Trained in keyword research, on-page optimization, and content planning for better online visibility.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Specialties:</strong> FB Ads, SEO optimization, Campaign management
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Creation -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-camera text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Content Creation</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-star mr-1 text-white"></i>2-5 Years Experience
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Professional graphic design and video editing services. Freelance photographer and videographer with extensive creative experience.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Tools:</strong> Adobe Creative Suite, Video editing software
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Marketing -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                <i class="fas fa-envelope text-2xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-pink-700 group-hover:text-pink-800 transition-colors duration-300">Email Marketing</h3>
+                        <div class="mb-4 flex justify-center">
+                            <span class="inline-flex items-center text-xs bg-gradient-to-r from-sky-400 to-sky-500 text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-briefcase mr-1 text-white"></i>3+ Years VA Experience
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Email campaign creation, automation setup, and audience segmentation to drive engagement and conversions.</p>
+                        <div class="text-xs text-gray-500 bg-gradient-to-r from-pink-50 to-sky-50 rounded-lg p-3 border border-pink-100">
+                            <strong class="text-pink-700">Tools:</strong> ActiveCampaign, Mailchimp, Constant Contact, Klaviyo, Zapier
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Results Screenshots Section -->
+            <div class="mt-0">
+                <h2 class="text-3xl font-bold text-center text-pink-600 mb-16">Campaign Results & Social Media Growth</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Screenshot Placeholder 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-pink-100">
+                        <div class="aspect-video bg-gradient-to-br from-pink-50 to-sky-50 border-b border-pink-100 overflow-hidden cursor-pointer" onclick="openImageModal('../images/Fb.jpg', 'Facebook Ads Results')">
+                            <img src="../images/Fb.jpg" alt="Facebook Ads Results" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-800 text-sm">Facebook Ads Results</h4>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot Placeholder 2 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-pink-100">
+                        <div class="aspect-video bg-gradient-to-br from-pink-50 to-sky-50 border-b border-pink-100 overflow-hidden cursor-pointer" onclick="openImageModal('../images/Website Activity.jpg', 'Website Activity After Successful Campaigns')">
+                            <img src="../images/Website Activity.jpg" alt="Website Activity After Successful Campaigns" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-800 text-sm">Website Activity After Successful Campaigns</h4>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot Placeholder 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-pink-100">
+                        <div class="aspect-video bg-gradient-to-br from-pink-50 to-sky-50 border-b border-pink-100 overflow-hidden cursor-pointer" onclick="openImageModal('../images/Website Traffic.jpg', 'Website Traffic After Successful Campaigns')">
+                            <img src="../images/Website Traffic.jpg" alt="Website Traffic After Successful Campaigns" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-800 text-sm">Campaign Performance</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Outputs Gallery Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-pink-600 mb-6">Sample Outputs Gallery</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Browse through my portfolio of marketing materials and creative outputs.
+                </p>
+            </div>
+            
+            <!-- First Row - Lead Magnets (Square/Landscape) -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+                <!-- Gallery 1 - Square -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Rectangular -->
+                        <div class="mb-6">
+                            <!-- Lead Magnet 1 Thumbnail -->
+                            <img src="../images/gallery1/LM11.png" alt="Lead Magnet 1 Thumbnail" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 aspect-video object-cover rounded-lg" onclick="console.log('Thumbnail clicked'); openGallery('gallery1', 0)">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Lead Magnet #1</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        </p>
+                        
+                        <!-- View Gallery Button -->
+                        <button onclick="console.log('Button clicked'); openGallery('gallery1', 0)" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-images mr-2"></i>View (4 images)
+                        </button>
+                        
+                        <!-- File Info -->
+                        <div class="mt-4 text-xs text-gray-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 - Square -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Rectangular -->
+                        <div class="mb-6">
+                            <!-- Lead Magnet 2 Thumbnail -->
+                            <img src="../images/gallery2/LM21.png" alt="Lead Magnet 2 Thumbnail" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 aspect-video object-cover rounded-lg" onclick="openGallery('gallery2', 0)">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Lead Magnet #2</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        </p>
+                        
+                        <!-- View Gallery Button -->
+                        <button onclick="openGallery('gallery2', 0)" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-images mr-2"></i>View (6 images)
+                        </button>
+                        
+                        <!-- File Info -->
+                        <div class="mt-4 text-xs text-gray-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Row - Portrait Items (Worksheet + Email Designs) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Gallery 3 - Portrait -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Portrait -->
+                        <div class="mb-6">
+                            <!-- Worksheet Thumbnail -->
+                            <img src="../images/gallery3/WS1.png" alt="Worksheet Thumbnail" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 max-w-full h-auto rounded-lg" onclick="openGallery('gallery3', 0)">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Worksheet</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                            This worksheet helps plan and organize focused time for creating a course. It guides users in setting goals, minimizing distractions, and completing tasks like scripting, filming, and editing within 3 to 7 days.
+                        </p>
+                        
+                        <!-- View Gallery Button -->
+                        <button onclick="openGallery('gallery3', 0)" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-images mr-2"></i>View (4 images)
+                        </button>
+                        
+                        <!-- File Info -->
+ 
+                    </div>
+                </div>
+
+                <!-- Email Design 1 - Portrait -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Portrait -->
+                        <div class="mb-6">
+                            <!-- Email Design 1 Thumbnail -->
+                            <img src="../images/gallery4/ED1.jpg" alt="Email Design 1" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 max-w-full h-auto rounded-lg" onclick="openImageModal('../images/gallery4/ED1.jpg', 'Email Design Sample 1')">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Email Design #1</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        </p>
+                        
+                        <!-- View Image Button -->
+                        <button onclick="openImageModal('../images/gallery4/ED1.jpg', 'Email Design Sample 1')" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-envelope mr-2"></i>View Design
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Email Design 2 - Portrait -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Portrait -->
+                        <div class="mb-6">
+                            <!-- Email Design 2 Thumbnail -->
+                            <img src="../images/gallery4/ED2.jpg" alt="Email Design 2" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 max-w-full h-auto rounded-lg" onclick="openImageModal('../images/gallery4/ED2.jpg', 'Email Design Sample 2')">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Email Design #2</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        </p>
+                        
+                        <!-- View Image Button -->
+                        <button onclick="openImageModal('../images/gallery4/ED2.jpg', 'Email Design Sample 2')" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-envelope mr-2"></i>View Design
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Email Design 3 - Portrait -->
+                <div class="group bg-gradient-to-br from-white to-pink-50/30 backdrop-blur-sm rounded-xl p-8 text-center border border-pink-200 hover:border-pink-400 hover:from-pink-50 hover:to-pink-100/50 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 relative overflow-hidden">
+                    <!-- Card background gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-100/40 to-sky-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Main Thumbnail - Portrait -->
+                        <div class="mb-6">
+                            <!-- Email Design 3 Thumbnail -->
+                            <img src="../images/gallery4/ED3.jpg" alt="Email Design 3" class="mx-auto cursor-pointer hover:scale-105 transition-transform duration-300 max-w-full h-auto rounded-lg" onclick="openImageModal('../images/gallery4/ED3.jpg', 'Email Design Sample 3')">
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 text-sky-700 group-hover:text-sky-800 transition-colors duration-300">Email Design #3</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        </p>
+                        
+                        <!-- View Image Button -->
+                        <button onclick="openImageModal('../images/gallery4/ED3.jpg', 'Email Design Sample 3')" class="inline-flex items-center px-6 py-3 h-12 bg-gradient-to-r from-sky-500 to-sky-600 text-white rounded-full font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-envelope mr-2"></i>View Design
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-pink-600 mb-16">My Process</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">1</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-700">Strategy</h3>
+                    <p class="text-gray-600">Comprehensive market research and goal-setting to create a tailored marketing strategy for your business.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">2</div>
+                    <h3 class="text-xl font-bold mb-3 text-sky-700">Creation</h3>
+                    <p class="text-gray-600">Developing engaging content, compelling ad creatives, and strategic campaign materials that resonate with your audience.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">3</div>
+                    <h3 class="text-xl font-bold mb-3 text-pink-700">Launch</h3>
+                    <p class="text-gray-600">Strategic campaign deployment across selected platforms with optimal timing and precise audience targeting.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">4</div>
+                    <h3 class="text-xl font-bold mb-3 text-sky-700">Optimize</h3>
+                    <p class="text-gray-600">Continuous monitoring, analysis, and optimization to maximize performance and ensure sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-pink-600 to-sky-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Amplify Your Brand?</h2>
+            <p class="text-xl mb-8 opacity-90">Let's create a digital marketing strategy that drives real results for your business.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../index.html#contact" class="px-8 py-4 bg-white text-pink-600 rounded-full font-semibold hover:bg-pink-50 transition transform hover:scale-105">
+                    <i class="fas fa-comments mr-2"></i>Start Your Campaign
+                </a>
+                <a href="../index.html" class="px-8 py-4 bg-white/10 border border-white rounded-full font-semibold hover:bg-white/20 transition transform hover:scale-105">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-rose-50 to-pink-50 border-t border-rose-200 text-rose-700 text-center py-8">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col items-center space-y-4">
+                <p class="text-sm text-gray-600">&copy; GlayVelos 2025 All rights reserved.</p>
+                <p class="text-xs text-gray-500">Creative freelancer specializing in digital marketing, video editing, photo editing, and web development.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="max-w-4xl max-h-full relative">
+                <button onclick="closeImageModal()" class="absolute top-2 right-2 text-white bg-black bg-opacity-75 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-90 transition-all z-10 border-2 border-white shadow-lg">
+                    <i class="fas fa-times text-lg font-bold"></i>
+                </button>
+                <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+                <div id="modalCaption" class="text-white text-center mt-4 text-lg font-semibold"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="max-w-6xl max-h-full relative w-full">
+                <!-- Close Button -->
+                <button onclick="closeGallery()" class="absolute top-4 right-4 text-white bg-black bg-opacity-75 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-90 transition-all z-20 border-2 border-white shadow-lg">
+                    <i class="fas fa-times text-xl font-bold"></i>
+                </button>
+                
+                <!-- Main Image Container -->
+                <div class="relative">
+                    <img id="galleryImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl mx-auto">
+                    
+                    <!-- Navigation Arrows -->
+                    <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-75 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-90 transition-all border-2 border-white shadow-lg">
+                        <i class="fas fa-chevron-left text-xl font-bold"></i>
+                    </button>
+                    <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-75 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-90 transition-all border-2 border-white shadow-lg">
+                        <i class="fas fa-chevron-right text-xl font-bold"></i>
+                    </button>
+                </div>
+                
+                <!-- Image Info -->
+                <div class="text-center mt-4">
+                    <div id="galleryCaption" class="text-white text-lg font-semibold mb-2"></div>
+                    <div id="galleryCounter" class="text-gray-300 text-sm"></div>
+                </div>
+                
+                <!-- Thumbnail Navigation -->
+                <div class="mt-6 flex justify-center">
+                    <div id="galleryThumbnails" class="flex gap-2 overflow-x-auto max-w-full pb-2">
+                        <!-- Thumbnails will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery data structure
+        const galleries = {
+            gallery1: {
+                name: "Lead Magnet #1",
+                images: [
+                    "../images/gallery1/LM11.png",
+                    "../images/gallery1/LM12.png",
+                    "../images/gallery1/LM13.png",
+                    "../images/gallery1/LM14.png"
+                ]
+            },
+            gallery2: {
+                name: "Lead Magnet #2",
+                images: [
+                    "../images/gallery2/LM21.png",
+                    "../images/gallery2/LM22.png",
+                    "../images/gallery2/LM23.png",
+                    "../images/gallery2/LM24.png",
+                    "../images/gallery2/LM25.png",
+                    "../images/gallery2/LM26.png"
+                ]
+            },
+            gallery3: {
+                name: "Worksheet",
+                images: [
+                    "../images/gallery3/WS1.png",
+                    "../images/gallery3/WS2.png",
+                    "../images/gallery3/WS3.png",
+                    "../images/gallery3/WS4.png"
+                ]
+            }
+        };
+
+        let currentGallery = '';
+        let currentImageIndex = 0;
+
+        // Image Modal Functions (existing)
+        function openImageModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modalImage.src = imageSrc;
+            modalImage.alt = caption;
+            modalCaption.textContent = caption;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Gallery Functions
+        function openGallery(galleryId, imageIndex = 0) {
+            console.log('=== openGallery called ===');
+            console.log('Gallery ID:', galleryId);
+            console.log('Image Index:', imageIndex);
+            console.log('Available galleries:', Object.keys(galleries));
+            
+            if (!galleries[galleryId]) {
+                console.error('Gallery not found:', galleryId);
+                alert('Gallery not found: ' + galleryId + '. Available galleries: ' + Object.keys(galleries).join(', '));
+                return;
+            }
+            
+            console.log('Gallery found:', galleries[galleryId]);
+            
+            currentGallery = galleryId;
+            currentImageIndex = imageIndex;
+            
+            const modal = document.getElementById('galleryModal');
+            if (!modal) {
+                console.error('Gallery modal element not found');
+                alert('Gallery modal element not found in DOM');
+                return;
+            }
+            
+            console.log('Modal element found, showing modal...');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            console.log('Gallery modal opened, updating display...');
+            updateGalleryDisplay();
+            createThumbnails();
+            console.log('=== openGallery completed ===');
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            const gallery = galleries[currentGallery];
+            currentImageIndex = (currentImageIndex + 1) % gallery.images.length;
+            updateGalleryDisplay();
+        }
+
+        function previousImage() {
+            const gallery = galleries[currentGallery];
+            currentImageIndex = (currentImageIndex - 1 + gallery.images.length) % gallery.images.length;
+            updateGalleryDisplay();
+        }
+
+        function goToImage(index) {
+            currentImageIndex = index;
+            updateGalleryDisplay();
+        }
+
+        function updateGalleryDisplay() {
+            const gallery = galleries[currentGallery];
+            if (!gallery) {
+                console.error('Gallery not found:', currentGallery);
+                return;
+            }
+            
+            const galleryImage = document.getElementById('galleryImage');
+            const galleryCaption = document.getElementById('galleryCaption');
+            const galleryCounter = document.getElementById('galleryCounter');
+            
+            const imageSrc = gallery.images[currentImageIndex];
+            console.log('Loading image:', imageSrc);
+            
+            // Add error handling for main image
+            galleryImage.onerror = function() {
+                console.error('Failed to load main image:', imageSrc);
+                galleryImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NzM4ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD4KICA8dGV4dCB4PSI1MCUiIHk9IjcwJSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOWNhM2FmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2hlY2sgY29uc29sZSBmb3IgZGV0YWlsczwvdGV4dD4KPC9zdmc+';
+            };
+            
+            galleryImage.onload = function() {
+                console.log('Successfully loaded main image:', imageSrc);
+            };
+            
+            galleryImage.src = imageSrc;
+            galleryImage.alt = `${gallery.name} - Image ${currentImageIndex + 1}`;
+            galleryCaption.textContent = gallery.name;
+            galleryCounter.textContent = `${currentImageIndex + 1} / ${gallery.images.length}`;
+            
+            updateActiveThumbnail();
+        }
+
+        function createThumbnails() {
+            const gallery = galleries[currentGallery];
+            if (!gallery) return;
+            
+            const thumbnailContainer = document.getElementById('galleryThumbnails');
+            thumbnailContainer.innerHTML = '';
+            
+            gallery.images.forEach((imageSrc, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = `w-16 h-16 bg-white rounded-lg overflow-hidden cursor-pointer border-2 transition-all duration-300 ${
+                    index === currentImageIndex ? 'border-pink-500 opacity-100' : 'border-gray-400 opacity-70 hover:opacity-100'
+                }`;
+                thumbnail.onclick = () => goToImage(index);
+                
+                // Create actual thumbnail image
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = `Thumbnail ${index + 1}`;
+                img.className = 'w-full h-full object-cover';
+                
+                // Add error handling for failed image loads
+                img.onerror = function() {
+                    console.error('Failed to load thumbnail:', imageSrc);
+                    thumbnail.innerHTML = `
+                        <div class="w-full h-full bg-gradient-to-br from-red-200 to-red-300 flex items-center justify-center">
+                            <span class="text-xs text-red-600">${index + 1}</span>
+                        </div>
+                    `;
+                };
+                
+                img.onload = function() {
+                    console.log('Successfully loaded thumbnail:', imageSrc);
+                };
+                
+                thumbnail.appendChild(img);
+                thumbnailContainer.appendChild(thumbnail);
+            });
+        }
+
+        function updateActiveThumbnail() {
+            const thumbnails = document.querySelectorAll('#galleryThumbnails > div');
+            thumbnails.forEach((thumb, index) => {
+                if (index === currentImageIndex) {
+                    thumb.className = thumb.className.replace('border-gray-400 opacity-70', 'border-pink-500 opacity-100');
+                } else {
+                    thumb.className = thumb.className.replace('border-pink-500 opacity-100', 'border-gray-400 opacity-70');
+                }
+            });
+        }
+
+        // Event Listeners
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            // Close modal when clicking on the backdrop (not on the image or its container)
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+                closeGallery();
+            }
+            
+            // Gallery navigation with keyboard
+            if (!document.getElementById('galleryModal').classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') {
+                    nextImage();
+                } else if (e.key === 'ArrowLeft') {
+                    previousImage();
+                }
+            }
+        });
+    </script>
+
+    <script src="../script.js"></script>
+</body>
+</html>
